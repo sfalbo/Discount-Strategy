@@ -30,6 +30,19 @@ public class Product {
     public void setDiscountStrategy(DiscountStrategy discountStrategy) {
         this.discountStrategy = discountStrategy;
     }
+    
+//    public void getTotalDiscount(double qty){
+//        DiscountStrategy ds = new DiscountStrategy();
+//        double totalDiscount = 0.0;
+//        for(DiscountStrategy discount : discounts) {
+//            DiscountStrategy.(qty);
+//            discount.setPrice(getUnitCost());
+//            totalDiscount += discount.getDiscount();
+//        }
+//        return totalDiscount;
+//        
+//        
+//    }
 
     public String getProductID() {
         return productID;

@@ -11,6 +11,7 @@ public class Receipt {
     private LineItem[] lineItems;
     private Product product;
     private LineItem[] items;
+    private String finalInvoice;
 
     public Receipt(String custID) {
 
@@ -47,7 +48,7 @@ public class Receipt {
         
     }
 
-    public void addNewLineItem(String productId, int qty) {
+    public void addNewLineItem(String productId, double qty) {
         LineItem lineItem = new LineItem(productId, qty);
         if (lineItems == null) {
             lineItems = new LineItem[1];
@@ -64,6 +65,10 @@ public class Receipt {
         }
 
     }
+    
+    public String getFinalInvoice(){
+        return finalInvoice;
+    }
 
     public void startNewSale(String custId) {
     }
@@ -73,7 +78,7 @@ public class Receipt {
 
         double grandTotal = 0.0;
         for (LineItem l : lineItems) {
-            grandTotal += l.getExtendedDiscountedAmount();
+            grandTotal += l.getLineItemTotal();
         }
         return grandTotal;
 
