@@ -11,4 +11,6 @@ public interface DiscountStrategy {
     double getDiscountRate();
 
     void setDiscountPercent(double discountPercent);
+
+    public void setPrice(double unitCost);
 }

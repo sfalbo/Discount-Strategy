@@ -8,7 +8,9 @@ public class LineItem {
 
     private String productId;
     private double qty;
-
+    private Product product;
+    
+    
     public LineItem(String productId, double qty) {
         this.productId = productId;
         this.qty = qty;
@@ -37,6 +39,14 @@ public class LineItem {
 
     public double getLineItemTotal() {
         return roundUpCents(product.getUnitCost() * qty - getTotalDiscount());
+    }
+    
+    //I took this from your program becuase I wasn't sure how to do this.
+     private double roundUpCents(double value) {
+        double result = value * 100;
+        result = Math.round(result);
+        result = result / 100;
+        return result;
     }
     
 }
